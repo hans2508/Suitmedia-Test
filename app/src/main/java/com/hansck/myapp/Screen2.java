@@ -25,7 +25,7 @@ public class Screen2 extends ActionBarActivity {
         String eventMessage = intent.getStringExtra("eNama");
         String guestNama = intent.getStringExtra("gNama");
         String guestBirthdate = intent.getStringExtra("gBirthdate");
-        SharedPreferences prefs = this.getSharedPreferences("com.hansck.myapp", Context.MODE_PRIVATE);
+        SharedPreferences prefs = this.getSharedPreferences("keyNama", Context.MODE_PRIVATE);
 
         //Cek Palindrom
         if (message != null) {
@@ -55,7 +55,7 @@ public class Screen2 extends ActionBarActivity {
         }
 
         //Set Textview Nama
-        String nameKey = "com.hansck.myapp";
+        String nameKey = "keyNama";
         String nama = prefs.getString(nameKey, "");
         if (nama != null && !nama.equals("") && message == null) {
             message = nama;
@@ -85,6 +85,8 @@ public class Screen2 extends ActionBarActivity {
                 Toast.makeText(getBaseContext(), "Blackberry", Toast.LENGTH_SHORT).show();
             } else if (tanggal % 3 == 0) {
                 Toast.makeText(getBaseContext(), "Android", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getBaseContext(), "Feature phone", Toast.LENGTH_SHORT).show();
             }
 
             int bulan = Integer.parseInt(guestBirthdate.substring(5, 7));
@@ -94,6 +96,7 @@ public class Screen2 extends ActionBarActivity {
                 if (bulan % i == 0) {
                     prima = true;
                 }
+                i++;
             }
             if (prima == true) {
                 Toast.makeText(getBaseContext(), "Bulan tidak prima", Toast.LENGTH_SHORT).show();

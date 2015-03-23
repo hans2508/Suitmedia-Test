@@ -28,7 +28,10 @@ public class Screen3 extends ActionBarActivity {
                         new Event(R.drawable.pic2, "Event 2","27-Maret-2015"),
                         new Event(R.drawable.pic3, "Event 3","10-April-2015"),
                         new Event(R.drawable.pic4, "Event 4","12-April-2015"),
-                        new Event(R.drawable.pic5, "Event 5","25-Juni-2015")
+                        new Event(R.drawable.pic5, "Event 5","25-Juni-2015"),
+                        new Event(R.drawable.pic1, "Event 6","24-Juni-2015"),
+                        new Event(R.drawable.pic2, "Event 7","23-Juni-2015"),
+                        new Event(R.drawable.pic3, "Event 8","22-Juni-2015")
                 };
 
         ListViewAdapter adapter = new ListViewAdapter(this,R.layout.list_view_item, data);

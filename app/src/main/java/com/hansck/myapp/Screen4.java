@@ -37,7 +37,7 @@ public class Screen4 extends ActionBarActivity {
 
     GridView gridView;
     ArrayList<Guest> guestList = new ArrayList<Guest>();
-    GridViewAdapter customGridAdapter;
+    GridViewAdapter gridViewAdapter;
 
     private ProgressDialog pDialog;
     private static String url = "http://dry-sierra-6832.herokuapp.com/api/people";
@@ -117,8 +117,8 @@ public class Screen4 extends ActionBarActivity {
             }
 
             gridView = (GridView) findViewById(R.id.gridView);
-            customGridAdapter = new GridViewAdapter(Screen4.this, R.layout.grid_view_item, guestList);
-            gridView.setAdapter(customGridAdapter);
+            gridViewAdapter = new GridViewAdapter(Screen4.this, R.layout.grid_view_item, guestList);
+            gridView.setAdapter(gridViewAdapter);
 
             gridView.setOnItemClickListener(new OnItemClickListener() {
                 public void onItemClick(AdapterView<?> adapterView, View v, int position, long id) {
